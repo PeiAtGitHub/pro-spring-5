@@ -8,16 +8,11 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import static org.junit.Assert.assertNotNull;
 
-/**
- * Created by iuliana.cosmina on 1/28/17.
- */
 public class TestHelloWorldSpringAnnotated {
 
 	@Test
 	public void testHello() {
-		ApplicationContext ctx = new AnnotationConfigApplicationContext
-				(HelloWorldConfiguration.class);
-		MessageRenderer mr = ctx.getBean("renderer", MessageRenderer.class);
-		assertNotNull(mr);
+		ApplicationContext ctx = new AnnotationConfigApplicationContext(HelloWorldConfiguration.class);
+		assertNotNull(ctx.getBean("renderer", MessageRenderer.class));
 	}
 }
