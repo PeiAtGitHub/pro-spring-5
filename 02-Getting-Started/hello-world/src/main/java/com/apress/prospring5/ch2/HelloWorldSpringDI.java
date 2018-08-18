@@ -8,6 +8,7 @@ public class HelloWorldSpringDI {
     
     public static void main(String... args) {
         ApplicationContext ctx = new ClassPathXmlApplicationContext("spring/app-context.xml");
-        ctx.getBean("renderer", MessageRenderer.class).render();
+        ctx.getBean("renderer", MessageRenderer.class).render(); // Renderer contains Provider
     }
+    
 }

@@ -1,11 +1,16 @@
 package com.apress.prospring5.ch2.decoupled;
 
+import lombok.Getter;
+import lombok.Setter;
+
 public class StandardOutMessageRenderer implements MessageRenderer {
 
+    @Getter
+    @Setter
 	private MessageProvider messageProvider;
 
 	public StandardOutMessageRenderer(){
-		System.out.println(" --> StandardOutMessageRenderer: constructor called");
+		System.out.println("StandardOutMessageRenderer Constructor!");
 	}
 
 	@Override
@@ -17,14 +22,4 @@ public class StandardOutMessageRenderer implements MessageRenderer {
 		System.out.println(messageProvider.getMessage());
 	}
 
-	@Override
-	public void setMessageProvider(MessageProvider provider) {
-		System.out.println(" --> StandardOutMessageRenderer: setting the provider");
-		this.messageProvider = provider;
-	}
-
-	@Override
-	public MessageProvider getMessageProvider() {
-		return this.messageProvider;
-	}
 }
