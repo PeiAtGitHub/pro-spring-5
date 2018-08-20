@@ -3,10 +3,20 @@ package com.apress.prospring5.ch3.xml.complicated;
 import com.apress.prospring5.ch3.xml.Bar;
 import org.springframework.context.support.GenericXmlApplicationContext;
 
-/**
- * Created by iuliana.cosmina on 2/24/17.
- */
 public class CTarget {
+
+    public static void main(String... args) {
+        GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
+        //using primary
+        //ctx.load("classpath:spring/app-context-04.xml");
+
+        //using qualifier
+        ctx.load("classpath:spring/app-context-05.xml");
+        ctx.refresh();
+        System.out.println("\nUsing byType:\n");
+        CTarget t = (CTarget) ctx.getBean("targetByType");
+        ctx.close();
+    }
 
 	private Foo fooOne;
 	private Foo fooTwo;
@@ -38,16 +48,4 @@ public class CTarget {
 		System.out.println("Property bar set");
 	}
 
-	public static void main(String... args) {
-		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-		//using primary
-		//ctx.load("classpath:spring/app-context-04.xml");
-
-		//using qualifier
-		ctx.load("classpath:spring/app-context-05.xml");
-		ctx.refresh();
-		System.out.println("\nUsing byType:\n");
-		CTarget t = (CTarget) ctx.getBean("targetByType");
-		ctx.close();
-	}
 }

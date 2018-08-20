@@ -7,28 +7,13 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>Spring_Demo</artifactId>
+        <artifactId>03-IoC-DI</artifactId>
         <groupId>Spring_Demo</groupId>
         <version>1.0</version>
     </parent>
 
     <groupId>Spring_Demo</groupId>
-    <artifactId>03-IoC-DI</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>bean-autowiring</artifactId>
 
 
-    <modules>
-        <module>bean-aliases</module>
-        <module>bean-autowiring</module>
-
-    </modules>
-
-    <dependencies>
-        <dependency>
-            <groupId>Spring_Demo</groupId>
-            <artifactId>01-Common</artifactId>
-            <version>1.0</version>
-        </dependency>
-    </dependencies>
-    
 </project>

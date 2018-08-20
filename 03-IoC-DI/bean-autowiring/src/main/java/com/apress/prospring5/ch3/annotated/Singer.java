@@ -6,26 +6,21 @@ import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.stereotype.Component;
 
-/**
- * Created by iuliana.cosmina on 2/22/17.
- */
 @Component("johnMayer")
 @DependsOn("gopher")
-public class Singer implements ApplicationContextAware{
+public class Singer implements ApplicationContextAware {
 
-	ApplicationContext applicationContext;
+    ApplicationContext applicationContext;
 
-	@Override public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
-		this.applicationContext = applicationContext;
-	}
+    private Guitar guitar;
 
-	private Guitar guitar;
+    @Override
+    public void setApplicationContext(ApplicationContext applicationContext) throws BeansException {
+        this.applicationContext = applicationContext;
+    }
 
-	public Singer(){
-	}
-
-	public void sing() {
-		guitar =  applicationContext.getBean("gopher", Guitar.class);
-		guitar.sing();
-	}
+    public void sing() {
+        guitar = applicationContext.getBean("gopher", Guitar.class);
+        guitar.sing();
+    }
 }

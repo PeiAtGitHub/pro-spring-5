@@ -8,12 +8,8 @@
     <bean id="fooOne" class="com.apress.prospring5.ch3.xml.Foo"/>
     <bean id="barOne" class="com.apress.prospring5.ch3.xml.Bar"/>
     
-    <bean id="targetByName" autowire="byName" class="com.apress.prospring5.ch3.xml.Target"
-        lazy-init="true"/>
-
-    <bean id="targetByType" autowire="byType" class="com.apress.prospring5.ch3.xml.Target"
-        lazy-init="true"/>
-
-    <bean id="targetConstructor" autowire="constructor" 
-        class="com.apress.prospring5.ch3.xml.Target" lazy-init="true"/>
+    <bean id="targetByName" autowire="byName" class="com.apress.prospring5.ch3.xml.Target" lazy-init="true"/>
+    <bean id="targetByType" autowire="byType" class="com.apress.prospring5.ch3.xml.Target" lazy-init="true"/>
+    <bean id="targetConstructor" autowire="constructor"  class="com.apress.prospring5.ch3.xml.Target" lazy-init="true"/>
+    
 </beans>

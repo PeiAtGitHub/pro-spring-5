@@ -2,11 +2,25 @@ package com.apress.prospring5.ch3.xml;
 
 import org.springframework.context.support.GenericXmlApplicationContext;
 
+import pei.java.spring.lab.utils.Utils;
+
 public class Target {
+   
+    public static void main(String... args) {
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-03.xml");
+
+        System.out.println(((Target) ctx.getBean("targetByName")).toString());
+        System.out.println(((Target) ctx.getBean("targetByType")).toString());
+        System.out.println(((Target) ctx.getBean("targetConstructor")).toString());
+
+        ctx.close();
+    }
+
+    
     private Foo fooOne;
     private Foo fooTwo;
     private Bar bar;
-
+    
     public Target() {
     }
     
@@ -18,6 +32,7 @@ public class Target {
         System.out.println("Target(Foo, Bar) called");
     }
     
+    //
     public void setFooOne(Foo fooOne) {
         this.fooOne = fooOne;
         System.out.println("Property fooOne set");
@@ -33,23 +48,4 @@ public class Target {
         System.out.println("Property bar set");
     }
 
-    public static void main(String... args) {
-        GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:spring/app-context-03.xml");
-        ctx.refresh();
-
-        Target t = null;
-        
-        System.out.println("Using byName:\n");
-        t = (Target) ctx.getBean("targetByName");
-        
-        System.out.println("\nUsing byType:\n");
-        t = (Target) ctx.getBean("targetByType");
-        
-        System.out.println("\nUsing constructor:\n");
-        t = (Target) ctx.getBean("targetConstructor");
-
-        ctx.close();
-        
-    }
 }

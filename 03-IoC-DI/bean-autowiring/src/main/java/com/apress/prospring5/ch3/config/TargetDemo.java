@@ -6,10 +6,13 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.GenericApplicationContext;
 
-/**
- * Created by iuliana.cosmina on 2/25/17.
- */
 public class TargetDemo {
+    
+    public static void main(String[] args) {
+        GenericApplicationContext ctx = new AnnotationConfigApplicationContext(TargetConfig.class);
+        System.out.println(ctx.getBean(TrickyTarget.class).toString());
+        ctx.close();
+    }
 
 	@Configuration
 	static class TargetConfig {
@@ -35,9 +38,4 @@ public class TargetDemo {
 		}
 	}
 
-	public static void main(String[] args) {
-		GenericApplicationContext ctx = new AnnotationConfigApplicationContext(TargetConfig.class);
-		TrickyTarget t = ctx.getBean(TrickyTarget.class);
-		ctx.close();
-	}
 }
