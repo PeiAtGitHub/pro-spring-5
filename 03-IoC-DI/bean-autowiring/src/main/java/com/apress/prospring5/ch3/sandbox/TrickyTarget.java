@@ -12,6 +12,13 @@ import pei.java.spring.lab.utils.Utils;
 @Lazy
 public class TrickyTarget {
 
+    public static void main(String... args) {
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-05.xml");
+        System.out.println(ctx.getBean(TrickyTarget.class).toString());
+        ctx.close();
+    }
+
+    
 	Foo fooOne;
 	Foo fooTwo;
 	Bar bar;
@@ -50,9 +57,4 @@ public class TrickyTarget {
 		System.out.println("Property bar set");
 	}
 
-	public static void main(String... args) {
-		GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-05.xml");
-		System.out.println(ctx.getBean(TrickyTarget.class).toString());
-		ctx.close();
-	}
 }

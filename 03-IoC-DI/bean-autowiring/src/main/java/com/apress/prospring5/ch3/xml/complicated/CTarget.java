@@ -1,20 +1,21 @@
 package com.apress.prospring5.ch3.xml.complicated;
 
 import com.apress.prospring5.ch3.xml.Bar;
+
+import pei.java.spring.lab.utils.Utils;
+
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 public class CTarget {
 
     public static void main(String... args) {
-        GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        //using primary
-        //ctx.load("classpath:spring/app-context-04.xml");
-
+        
         //using qualifier
-        ctx.load("classpath:spring/app-context-05.xml");
-        ctx.refresh();
-        System.out.println("\nUsing byType:\n");
-        CTarget t = (CTarget) ctx.getBean("targetByType");
+//        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-05.xml");
+        //using primary
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-04.xml");
+
+        System.out.println(((CTarget) ctx.getBean("targetByType")).toString());
         ctx.close();
     }
 
