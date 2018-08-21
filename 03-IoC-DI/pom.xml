@@ -22,6 +22,7 @@
         <module>bean-autowiring</module>
         <module>bean-inheritance</module>
         <module>bean-instantiation-mode</module>
+        <module>cdl</module>
 
     </modules>
 
