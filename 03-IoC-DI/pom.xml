@@ -20,6 +20,7 @@
     <modules>
         <module>bean-aliases</module>
         <module>bean-autowiring</module>
+        <module>bean-inheritance</module>
 
     </modules>
 
