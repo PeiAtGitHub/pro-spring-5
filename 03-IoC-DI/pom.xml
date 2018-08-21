@@ -23,6 +23,7 @@
         <module>bean-inheritance</module>
         <module>bean-instantiation-mode</module>
         <module>cdl</module>
+        <module>collections</module>
 
     </modules>
 

@@ -8,6 +8,9 @@ import java.util.Set;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
+
+import pei.java.spring.lab.utils.Utils;
+
 import org.springframework.context.support.GenericXmlApplicationContext;
 
 import javax.annotation.Resource;
@@ -16,7 +19,8 @@ import javax.annotation.Resource;
 public class CollectionInjection {
 
     /**
-     *      @Resource(name="map") is equivalent with @Autowired @Qualifier("map")
+     * @Resource(name="map") is equivalent with 
+     * @Autowired @Qualifier("map")
      */
     @Autowired
     @Qualifier("map")
@@ -32,28 +36,16 @@ public class CollectionInjection {
     private List list;
 
     public static void main(String... args) {
-        GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:spring/app-context-annotation.xml");
-        ctx.refresh();  
-
-        CollectionInjection instance = (CollectionInjection) ctx.getBean("injectCollection");
-        instance.displayInfo();
-
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-annotation.xml");
+        ((CollectionInjection) ctx.getBean("injectCollection")).displayInfo();
         ctx.close();
     }
 
     public void displayInfo() {
-        System.out.println("Map contents:\n");
-        map.entrySet().stream().forEach(e -> System.out.println("Key: " + e.getKey() + " - Value: " + e.getValue()));
-
-        System.out.println("\nProperties contents:\n");
-        props.entrySet().stream().forEach(e -> System.out.println("Key: " + e.getKey() + " - Value: " + e.getValue()));
-
-        System.out.println("\nSet contents:\n");
-        set.forEach(obj -> System.out.println("Value: " + obj));
-
-        System.out.println("\nList contents:\n");
-        list.forEach(obj -> System.out.println("Value: " + obj));
+        System.out.println("Map contents:" + map.toString());
+        System.out.println("Properties contents:" + props.toString());
+        System.out.println("Set contents:" + set.toString());
+        System.out.println("List contents:" + list.toString());
     }
 
 }
