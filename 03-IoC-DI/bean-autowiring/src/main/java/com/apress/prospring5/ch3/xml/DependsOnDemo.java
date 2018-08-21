@@ -9,7 +9,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
 public class DependsOnDemo {
 
 	public static void main(String... args) {
-		GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-01.xml");
+		GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-01.xml");
 
 		ctx.getBean("johnMayer", Singer.class).sing();
 

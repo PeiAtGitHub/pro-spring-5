@@ -6,7 +6,7 @@ import pei.java.spring.lab.utils.Utils;
 public class AnnotatedDependsOnDemo {
 
 	public static void main(String... args) {
-		GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-02.xml");
+		GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-02.xml");
 
 		ctx.getBean("johnMayer", Singer.class).sing();
 

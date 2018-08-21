@@ -7,7 +7,7 @@ import org.springframework.context.support.GenericXmlApplicationContext;
  */
 public class Utils {
 
-    static public GenericXmlApplicationContext getGenericXmlApplicationContext(String... resourceLocations) {
+    static public GenericXmlApplicationContext getGenericXmlAppCtx(String... resourceLocations) {
         GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
         ctx.load(resourceLocations);
         ctx.refresh();

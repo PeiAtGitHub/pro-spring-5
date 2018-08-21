@@ -7,8 +7,7 @@ import pei.java.spring.lab.utils.Utils;
 public class InheritanceDemo {
 
     public static void main(String... args) {
-        GenericXmlApplicationContext ctx = Utils
-                .getGenericXmlApplicationContext("classpath:spring/app-context-xml.xml");
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-xml.xml");
 
         System.out.println(((Singer) ctx.getBean("parent")).toString());
         System.out.println(((Singer) ctx.getBean("child")).toString());

@@ -13,7 +13,7 @@ public class CTarget {
         //using qualifier
 //        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-05.xml");
         //using primary
-        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-04.xml");
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-04.xml");
 
         System.out.println(((CTarget) ctx.getBean("targetByType")).toString());
         ctx.close();

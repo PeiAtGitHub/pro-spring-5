@@ -13,7 +13,7 @@ import pei.java.spring.lab.utils.Utils;
 public class TrickyTarget {
 
     public static void main(String... args) {
-        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-05.xml");
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-05.xml");
         System.out.println(ctx.getBean(TrickyTarget.class).toString());
         ctx.close();
     }

@@ -7,7 +7,7 @@ import pei.java.spring.lab.utils.Utils;
 public class Target {
    
     public static void main(String... args) {
-        GenericXmlApplicationContext ctx = Utils.getGenericXmlApplicationContext("classpath:spring/app-context-03.xml");
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-03.xml");
 
         System.out.println(((Target) ctx.getBean("targetByName")).toString());
         System.out.println(((Target) ctx.getBean("targetByType")).toString());

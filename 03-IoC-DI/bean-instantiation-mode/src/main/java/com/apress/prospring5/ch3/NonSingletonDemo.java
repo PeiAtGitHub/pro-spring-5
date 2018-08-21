@@ -10,9 +10,8 @@ public class NonSingletonDemo {
 
     public static void main(String... args) {
 
-        GenericXmlApplicationContext ctx = Utils
-                .getGenericXmlApplicationContext("classpath:spring/app-context-annotated.xml");
-//        .getGenericXmlApplicationContext("classpath:spring/app-context-xml.xml");
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-annotated.xml");
+//        .getGenericXmlAppCtx("classpath:spring/app-context-xml.xml");
 
         Singer singer1 = ctx.getBean("nonSingleton", Singer.class);
         Singer singer2 = ctx.getBean("nonSingleton", Singer.class);
