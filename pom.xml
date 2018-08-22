@@ -3,19 +3,20 @@
     xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <project.version>1.0</project.version>
+    </properties>
+
     <groupId>Spring_Demo</groupId>
     <artifactId>Spring_Demo</artifactId>
-    <version>1.0</version>
+    <version>${project.version}</version>
     <packaging>pom</packaging>
-
-
 
     <modules>
         <module>01-Common</module>
         <module>02-Getting-Started</module>
         <module>03-IoC-DI</module>
 
-        <module>01-Common</module>
     </modules>
 
     <dependencies>

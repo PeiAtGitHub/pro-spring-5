@@ -7,33 +7,20 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <artifactId>Spring_Demo</artifactId>
+        <artifactId>03-IoC-DI</artifactId>
         <groupId>Spring_Demo</groupId>
         <version>${project.version}</version>
     </parent>
 
     <groupId>Spring_Demo</groupId>
-    <artifactId>03-IoC-DI</artifactId>
-    <packaging>pom</packaging>
-
-
-    <modules>
-        <module>bean-aliases</module>
-        <module>bean-autowiring</module>
-        <module>bean-inheritance</module>
-        <module>bean-instantiation-mode</module>
-        <module>cdl</module>
-        <module>collections</module>
-        <module>constructor-injection</module>
-
-    </modules>
+    <artifactId>constructor-injection</artifactId>
 
     <dependencies>
         <dependency>
             <groupId>Spring_Demo</groupId>
-            <artifactId>01-Common</artifactId>
+            <artifactId>hello-world</artifactId>
             <version>${project.version}</version>
         </dependency>
     </dependencies>
-    
+
 </project>
