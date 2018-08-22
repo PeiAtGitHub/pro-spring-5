@@ -5,6 +5,7 @@
 
     <properties>
         <project.version>1.0</project.version>
+        <java.version>1.8</java.version>
     </properties>
 
     <groupId>Spring_Demo</groupId>

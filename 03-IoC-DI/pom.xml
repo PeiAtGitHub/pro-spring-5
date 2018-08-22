@@ -28,6 +28,7 @@
         <module>dependency-pull</module>
         <module>field-injection</module>
         <module>injection</module>
+        <module>method-injection</module>
 
     </modules>
 

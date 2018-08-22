@@ -4,6 +4,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
+import com.apress.prospring5.ch3.common.DemoBean;
+
 @Component("standardLookupBean")
 public class StandardLookupDemoBean implements DemoBean {
 
