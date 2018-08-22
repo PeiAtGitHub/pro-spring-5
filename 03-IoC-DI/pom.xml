@@ -26,6 +26,7 @@
         <module>collections</module>
         <module>constructor-injection</module>
         <module>dependency-pull</module>
+        <module>field-injection</module>
 
     </modules>
 
