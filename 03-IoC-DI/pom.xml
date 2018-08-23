@@ -29,6 +29,7 @@
         <module>field-injection</module>
         <module>injection</module>
         <module>method-injection</module>
+        <module>method-replacement</module>
 
     </modules>
 
