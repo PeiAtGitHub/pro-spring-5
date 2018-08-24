@@ -32,7 +32,7 @@
         <module>method-replacement</module>
         <module>nesting</module>
         <module>setter-injection</module>
-
+        <module>simple-types</module>
     </modules>
 
     <dependencies>

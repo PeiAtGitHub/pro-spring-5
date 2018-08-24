@@ -4,8 +4,13 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.support.GenericXmlApplicationContext;
 import org.springframework.stereotype.Service;
 
+import lombok.ToString;
+import pei.java.spring.lab.utils.Utils;
+
+@ToString
 @Service("injectSimpleSpel")
 public class InjectSimpleSpel {
+
     @Value("#{injectSimpleConfig.name}")
     private String name;
 
@@ -21,22 +26,9 @@ public class InjectSimpleSpel {
     @Value("#{injectSimpleConfig.ageInSeconds}")
     private Long ageInSeconds;
 
-    public String toString() {
-        return "Name: " + name + "\n"
-            + "Age: " + age + "\n"
-            + "Age in Seconds: " + ageInSeconds + "\n"
-            + "Height: " + height + "\n"
-            + "Is Programmer?: " + programmer;
-    }
-
     public static void main(String... args) {
-        GenericXmlApplicationContext ctx = new GenericXmlApplicationContext();
-        ctx.load("classpath:spring/app-context-annotation.xml");
-        ctx.refresh();
-
-        InjectSimpleSpel simple = (InjectSimpleSpel)ctx.getBean("injectSimpleSpel");
-        System.out.println(simple);
-
+        GenericXmlApplicationContext ctx = Utils.getGenericXmlAppCtx("classpath:spring/app-context-annotation.xml");
+        System.out.println((InjectSimpleSpel)ctx.getBean("injectSimpleSpel"));
         ctx.close();
     }
 }

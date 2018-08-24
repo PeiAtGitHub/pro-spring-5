@@ -2,6 +2,9 @@ package com.apress.prospring5.ch3.annotated;
 
 import org.springframework.stereotype.Component;
 
+import lombok.Getter;
+
+@Getter
 @Component("injectSimpleConfig")
 public class InjectSimpleConfig {
 
@@ -11,23 +14,4 @@ public class InjectSimpleConfig {
 	private boolean programmer = false;
 	private Long ageInSeconds = 1_241_401_112L;
 
-	public String getName() {
-		return name;
-	}
-
-	public int getAge() {
-		return age;
-	}
-
-	public float getHeight() {
-		return height;
-	}
-
-	public boolean isProgrammer() {
-		return programmer;
-	}
-
-	public Long getAgeInSeconds() {
-		return ageInSeconds;
-	}
 }

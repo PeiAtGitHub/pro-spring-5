@@ -6,7 +6,6 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-
     <bean id="injectSimple" class="com.apress.prospring5.ch3.xml.InjectSimple"
     	p:name="John Mayer"
         p:age="39"
