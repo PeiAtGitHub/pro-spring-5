@@ -30,6 +30,7 @@
         <module>injection</module>
         <module>method-injection</module>
         <module>method-replacement</module>
+        <module>nesting</module>
 
     </modules>
 

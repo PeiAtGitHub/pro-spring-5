@@ -7,12 +7,8 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
         http://www.springframework.org/schema/beans/spring-beans.xsd">
 
-    <bean id="song1" class="com.apress.prospring5.ch3.Song"
-          p:title-ref="parentTitle"/>
-
-    <bean id="song2" class="com.apress.prospring5.ch3.Song"
-          p:title-ref="childTitle"/>
-
+    <bean id="song1" class="com.apress.prospring5.ch3.Song" p:title-ref="parentTitle"/>
+    <bean id="song2" class="com.apress.prospring5.ch3.Song" p:title-ref="childTitle"/>
     <bean id="song3" class="com.apress.prospring5.ch3.Song">
         <property name="title">
             <ref parent="childTitle"/>
@@ -20,4 +16,5 @@
     </bean>
 
     <bean id="childTitle" class="java.lang.String" c:_0="No Such Thing"/>
+    
 </beans>
