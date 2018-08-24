@@ -31,6 +31,7 @@
         <module>method-injection</module>
         <module>method-replacement</module>
         <module>nesting</module>
+        <module>setter-injection</module>
 
     </modules>
 
